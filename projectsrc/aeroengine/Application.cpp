@@ -26,7 +26,7 @@ void App::Engine::start( void ) {
 
 }
 
-//------ Start Script-------------
+//------ Start Script-----------------
 void App::Engine::StartScript( void ){
 
 	ChaiStart.eval_file( "start.chai" );
