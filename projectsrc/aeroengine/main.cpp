@@ -2,6 +2,10 @@
 #include <GLFW/glfw3.h>
 #include <string>
 #include <Windows.h>
+#ifdef F
+void glerror(int error, const char* description) {
+	MessageBoxA(nullptr, "Fatal Error", "Error: " + *description, MB_OK | MB_ICONERROR | MB_TASKMODAL);
+}
 
 void framebuff_size_callback(GLFWwindow* window, int width, int height) {
 	glViewport(0, 0, width, height);
@@ -24,11 +28,6 @@ int _stdcall wWinMain(_In_ HINSTANCE hInstance,
 	glfwWindowHint(GLFW_OPENGL_PROFILE, GLFW_OPENGL_CORE_PROFILE);
 
 	GLFWwindow* window = glfwCreateWindow(800, 600, "The Battle of Kings", nullptr, nullptr);
-	if (window == nullptr) {
-		OutputDebugStringA("well shit :)\n");
-		glfwTerminate();
-		return 1;
-	}
 	glfwMakeContextCurrent(window);
 	glfwSetFramebufferSizeCallback(window, framebuff_size_callback);
 
@@ -39,6 +38,8 @@ int _stdcall wWinMain(_In_ HINSTANCE hInstance,
 
 	while (!glfwWindowShouldClose(window)) {
 		process_input(window);
+		glClearColor(0.2f, 0.3f, 0.3f, 1.0f);
+		glClear(GL_COLOR_BUFFER_BIT);
 		glfwSwapBuffers(window);
 		glfwPollEvents();
 	}
@@ -46,3 +47,14 @@ int _stdcall wWinMain(_In_ HINSTANCE hInstance,
 	glfwTerminate();
 	return 0;
 }
+#else
+#include "../graphics/System.h"
+int _stdcall wWinMain(_In_ HINSTANCE hInstance,
+	_In_opt_ HINSTANCE hPrevInstance,
+	_In_ LPWSTR lpCmdLine,
+	_In_ int nShowCmd) 
+{
+	System sys(800,600,"Test");
+	
+}
+#endif

@@ -1,0 +1,9 @@
+﻿  System.cpp
+  glad.cpp
+     Creating library D:\AeroEngine\projectsrc\aeroengine\x64\Release\graphics.lib and object D:\AeroEngine\projectsrc\aeroengine\x64\Release\graphics.exp
+  Generating code
+  5 of 36 functions (13.9%) were compiled, the rest were copied from previous compilation.
+    1 functions were new in current compilation
+    1 functions had inline decision re-evaluated but remain unchanged
+  Finished generating code
+  graphics.vcxproj -> D:\AeroEngine\projectsrc\aeroengine\x64\Release\graphics.dll
