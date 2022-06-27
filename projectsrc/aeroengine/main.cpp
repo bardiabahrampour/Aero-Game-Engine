@@ -49,12 +49,30 @@ int _stdcall wWinMain(_In_ HINSTANCE hInstance,
 }
 #else
 #include "../graphics/System.h"
+
+void input(GLFWwindow* win, int key, int scancode, int action, int mods) {
+	if (key == GLFW_KEY_ESCAPE && action == GLFW_PRESS) {
+		
+	}
+}
+
+void glerror(int error, const char* description) {
+	MessageBoxA(nullptr, "Fatal Error", "Error: " + *description, MB_OK | MB_ICONERROR | MB_TASKMODAL);
+}
+
+void loop(void) {
+	OutputDebugStringA("loop running\n");
+}
+
 int _stdcall wWinMain(_In_ HINSTANCE hInstance,
 	_In_opt_ HINSTANCE hPrevInstance,
 	_In_ LPWSTR lpCmdLine,
 	_In_ int nShowCmd) 
 {
 	System sys(800,600,"Test");
-	
+	sys.setInput(process_input);
+	sys.setGlErrorCallback(glerror);
+	sys.setLoop(loop);
+	sys.init();
 }
 #endif

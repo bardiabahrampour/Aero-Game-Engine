@@ -4,22 +4,24 @@
 #include <glad/glad.h>
 
 class _API System {
-	void init(int &w, int &h, const char* &title);
 	void setVersion();
 	void loadGlad();
 	void Crash();
-	void (*m_error_callback)(int, const char*);
-	void (*loop)(void);
-	void (*input)(GLFWwindow*);
-	GLFWwindow* win;
-	int width, height;
+	void (*m_error_callback)(int, const char*) = nullptr;
+	void (*loop)(void) = nullptr;
+	void (*input)(GLFWwindow*,int,int,int,int) = nullptr;
+	GLFWwindow* win = nullptr;
+	int width = 0, height = 0;
 	const char* title;
 public:
 	System(int w, int h, const char* title);
 	~System();
 	void setGlErrorCallback(void (*error_callback)(int, const char*));
 	void setLoop(void (*ploop)(void));
-	void setInput(void (*pinput)(GLFWwindow*));
+	void setInput(void (*pinput)(GLFWwindow*,int,int,int,int));
+	GLFWwindow* getWindow();
+	void init();
+	void exit();
 };
 
 namespace Callbacks {

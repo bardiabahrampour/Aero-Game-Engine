@@ -21,30 +21,30 @@ System::System(int w, int h, const char* title) :
 	height(h),
 	title(title)
 {
-	this->init(w, h, title);
+
 }
 
-void System::init(int& w, int& h, const char*& title) {
+void System::init() {
 	glfwInit();
 	glfwSetErrorCallback(m_error_callback);
 	this->setVersion();
 	this->win =
-		glfwCreateWindow(w, h, title, nullptr, nullptr);
+		glfwCreateWindow(this->width, this->height, this->title, nullptr, nullptr);
 	if (win == nullptr) {
 		m_error_callback(1, "Failed to create window");
 		this->Crash();
 	}
 	glfwMakeContextCurrent(this->win);
 	glfwSetFramebufferSizeCallback(this->win, Callbacks::framebuff_callback);
+	glfwSetKeyCallback(this->win, this->input);
 	this->loadGlad();
 
 	while (!glfwWindowShouldClose(this->win)) {
-		this->input(this->win);
 		glClearColor(0.0f, 0.0f, 0.0f, 1.0f);
 		glClear(GL_COLOR_BUFFER_BIT);
+		this->loop();
 		glfwSwapBuffers(this->win);
 		glfwPollEvents();
-		this->loop();
 	}
 }
 
@@ -82,6 +82,14 @@ void System::setLoop(void (*ploop)(void)) {
 	this->loop = ploop;
 }
 
-void System::setInput(void (*pinput)(GLFWwindow*)) {
+void System::setInput(void (*pinput)(GLFWwindow*,int,int,int,int)) {
 	this->input = pinput;
+}
+
+void System::exit() {
+	glfwSetWindowShouldClose(this->win, true);
+}
+
+GLFWwindow* System::getWindow() {
+	return this->win;
 }
