@@ -50,9 +50,11 @@ int _stdcall wWinMain(_In_ HINSTANCE hInstance,
 #else
 #include "../graphics/System.h"
 
+System sys(800, 600, "Test");
+
 void input(GLFWwindow* win, int key, int scancode, int action, int mods) {
 	if (key == GLFW_KEY_ESCAPE && action == GLFW_PRESS) {
-		
+		sys.exit();
 	}
 }
 
@@ -69,8 +71,7 @@ int _stdcall wWinMain(_In_ HINSTANCE hInstance,
 	_In_ LPWSTR lpCmdLine,
 	_In_ int nShowCmd) 
 {
-	System sys(800,600,"Test");
-	sys.setInput(process_input);
+	sys.setInput(input);
 	sys.setGlErrorCallback(glerror);
 	sys.setLoop(loop);
 	sys.init();
