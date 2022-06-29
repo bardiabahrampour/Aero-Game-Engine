@@ -1,9 +1,9 @@
 #pragma once
-#include "pch.h"
-#include "api.h"
+#include "Event.h"
 #include <vector>
 
 enum class KeyboardKeyTypes : uint16_t {
+	Key_Unknown = GLFW_KEY_UNKNOWN,
 	Key_Space = GLFW_KEY_SPACE,
 	Key_Apostrophe = GLFW_KEY_APOSTROPHE,
 	Key_Comma = GLFW_KEY_COMMA,
@@ -76,23 +76,19 @@ enum class KeyboardKeyTypes : uint16_t {
 	Key_F3 = GLFW_KEY_F3,
 	Key_F4 = GLFW_KEY_F4,
 	Key_F5 = GLFW_KEY_F5,
+	Key_F6 = GLFW_KEY_F6,
+	Key_F7 = GLFW_KEY_F7,
+	Key_F8 = GLFW_KEY_F8,
 
-};
-
-//Key event type
-//Note : do not use key repeat
-enum class KeyboardEventType : uint8_t {
-	Key_Released = GLFW_RELEASE,
-	Key_Pressed = GLFW_PRESS,
-	Key_Repeat = GLFW_REPEAT,
 };
 
 class KeyboardKey {
 	KeyboardKeyTypes type;
-	KeyboardEventType evt_type;
+public:
+	void SetKeyType(KeyboardKeyTypes type);
 };
 
-class INPUT_API KeyboardEvent {
+class INPUT_API KeyboardEvent : public Event {
 	std::vector<KeyboardKey> keys;
 };
 
