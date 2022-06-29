@@ -3,9 +3,11 @@
 #include <cstdint>
 #include <vector>
 #include <functional>
+#include "api.h"
 
-typedef std::function<void> GameEventFunc;
+typedef std::function<void()> GameEventFunc;
 
+//Key types
 enum class KeyboardKeyTypes : uint16_t {
 	Key_Space = GLFW_KEY_SPACE,
 	Key_Apostrophe = GLFW_KEY_APOSTROPHE,
@@ -82,10 +84,12 @@ enum class KeyboardKeyTypes : uint16_t {
 
 };
 
+//Key event type
+//Note : do not use key repeat
 enum class KeyboardKeyEventType : uint8_t {
 	Key_Released = GLFW_RELEASE,
 	Key_Pressed  = GLFW_PRESS,
-	Key_Hold     = GLFW_REPEAT,
+	Key_Repeat   = GLFW_REPEAT,
 };
 
 class KeyboardKey {
@@ -95,7 +99,7 @@ class KeyboardKey {
 
 
 
-class InputManager {
+class INPUT_API Event {
 	
 };
 
