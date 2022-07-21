@@ -5,9 +5,11 @@ VisualStudioVersion = 16.0.31321.278
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "aeroengine", "aeroengine.vcxproj", "{6A56B82E-7CF8-4B22-9CD7-89BD12AEEF67}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "graphics", "..\graphics\graphics.vcxproj", "{67BFDC1B-A8F5-4784-991C-564FE4F6168D}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "GraphicsSystem", "..\graphics\graphics.vcxproj", "{67BFDC1B-A8F5-4784-991C-564FE4F6168D}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "input", "..\input\input.vcxproj", "{31C058E1-61C3-4924-95A7-88871DA506B1}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "EventSystem", "..\input\input.vcxproj", "{31C058E1-61C3-4924-95A7-88871DA506B1}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Common", "..\Common\Common.vcxproj", "{AA12596A-A205-4599-8F57-859A53B7EC39}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -41,6 +43,14 @@ Global
 		{31C058E1-61C3-4924-95A7-88871DA506B1}.Release|x64.Build.0 = Release|x64
 		{31C058E1-61C3-4924-95A7-88871DA506B1}.Release|x86.ActiveCfg = Release|Win32
 		{31C058E1-61C3-4924-95A7-88871DA506B1}.Release|x86.Build.0 = Release|Win32
+		{AA12596A-A205-4599-8F57-859A53B7EC39}.Debug|x64.ActiveCfg = Debug|x64
+		{AA12596A-A205-4599-8F57-859A53B7EC39}.Debug|x64.Build.0 = Debug|x64
+		{AA12596A-A205-4599-8F57-859A53B7EC39}.Debug|x86.ActiveCfg = Debug|Win32
+		{AA12596A-A205-4599-8F57-859A53B7EC39}.Debug|x86.Build.0 = Debug|Win32
+		{AA12596A-A205-4599-8F57-859A53B7EC39}.Release|x64.ActiveCfg = Release|x64
+		{AA12596A-A205-4599-8F57-859A53B7EC39}.Release|x64.Build.0 = Release|x64
+		{AA12596A-A205-4599-8F57-859A53B7EC39}.Release|x86.ActiveCfg = Release|Win32
+		{AA12596A-A205-4599-8F57-859A53B7EC39}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

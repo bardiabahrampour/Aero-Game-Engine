@@ -124,7 +124,7 @@
       <SubSystem>Windows</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <AdditionalLibraryDirectories>D:\AeroEngine\projectsrc\aeroengine\x64\Release;D:\AeroEngine\projectsrc\aeroengine;D:\AeroEngine\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
-      <AdditionalDependencies>glfw3.lib;glfw3_mt.lib;opengl32.lib;graphics.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>glfw3.lib;glfw3_mt.lib;opengl32.lib;GraphicsSystem_$(Configuration)_$(Platform).lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
@@ -145,7 +145,7 @@
       <OptimizeReferences>true</OptimizeReferences>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <AdditionalLibraryDirectories>D:\AeroEngine\projectsrc\aeroengine\x64\Release;D:\AeroEngine\projectsrc\aeroengine;D:\AeroEngine\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
-      <AdditionalDependencies>glfw3.lib;glfw3_mt.lib;opengl32.lib;graphics.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>glfw3.lib;glfw3_mt.lib;opengl32.lib;GraphicsSystem_$(Configuration)_$(Platform).lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>

@@ -24,6 +24,7 @@
     <ProjectGuid>{31c058e1-61c3-4924-95a7-88871da506b1}</ProjectGuid>
     <RootNamespace>input</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
+    <ProjectName>EventSystem</ProjectName>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
@@ -78,9 +79,11 @@
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <LinkIncremental>true</LinkIncremental>
+    <TargetName>$(ProjectName)_$(Configuration)_$(Platform)</TargetName>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <LinkIncremental>false</LinkIncremental>
+    <TargetName>$(ProjectName)_$(Configuration)_$(Platform)</TargetName>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
@@ -165,6 +168,7 @@
     <ClInclude Include="framework.h" />
     <ClInclude Include="Event.h" />
     <ClInclude Include="GameEvent.h" />
+    <ClInclude Include="GeneralEvent.h" />
     <ClInclude Include="KeyboardEvent.h" />
     <ClInclude Include="pch.h" />
   </ItemGroup>
@@ -172,6 +176,7 @@
     <ClCompile Include="dllmain.cpp" />
     <ClCompile Include="Event.cpp" />
     <ClCompile Include="GameEvent.cpp" />
+    <ClCompile Include="GeneralEvent.cpp" />
     <ClCompile Include="KeyboardEvent.cpp" />
     <ClCompile Include="pch.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Create</PrecompiledHeader>

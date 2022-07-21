@@ -1,6 +1,17 @@
-﻿  InputManager.cpp
+﻿C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\MSBuild\Microsoft\VC\v160\Microsoft.CppBuild.targets(513,5): warning MSB8028: The intermediate directory (x64\Release\) contains files shared from another project (input.vcxproj).  This can lead to incorrect clean and rebuild behavior.
+  pch.cpp
+  dllmain.cpp
+  Event.cpp
+  GameEvent.cpp
+  KeyboardEvent.cpp
+D:\AeroEngine\projectsrc\input\KeyboardEvent.h(7,2): warning C4309: 'initializing': truncation of constant value
+D:\AeroEngine\projectsrc\input\KeyboardEvent.h(7,32): warning C4369: 'KeyboardKeyTypes::Key_Unknown':  enumerator value '-1' cannot be represented as 'unsigned short', value is '65535'
+D:\AeroEngine\projectsrc\input\KeyboardEvent.h(93,27): warning C4251: 'KeyboardEvent::keys': class 'std::vector<KeyboardKey,std::allocator<KeyboardKey>>' needs to have dll-interface to be used by clients of class 'KeyboardEvent'
+D:\AeroEngine\projectsrc\input\KeyboardEvent.h(93): message : see declaration of 'std::vector<KeyboardKey,std::allocator<KeyboardKey>>'
+  SystemEvent.cpp
+     Creating library D:\AeroEngine\projectsrc\aeroengine\x64\Release\EventSystem_Release_x64.lib and object D:\AeroEngine\projectsrc\aeroengine\x64\Release\EventSystem_Release_x64.exp
   Generating code
-  Compiler switch has changed, fall back to full compilation.
-  All 1 functions were compiled because no usable IPDB/IOBJ from previous compilation was found.
+  Previous IPDB not found, fall back to full compilation.
+  All 106 functions were compiled because no usable IPDB/IOBJ from previous compilation was found.
   Finished generating code
-  input.vcxproj -> D:\AeroEngine\projectsrc\aeroengine\x64\Release\input.dll
+  input.vcxproj -> D:\AeroEngine\projectsrc\aeroengine\x64\Release\EventSystem_Release_x64.dll

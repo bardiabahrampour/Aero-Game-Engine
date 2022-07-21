@@ -1,6 +1,13 @@
 #pragma once
 #include "Event.h"
 #include <vector>
+#include "GeneralEvent.h"
+
+enum class KeyboardEventTypes : uint8_t {
+	Pressed  = GLFW_PRESS,
+	Released = GLFW_RELEASE,
+	Repeated = GLFW_REPEAT,
+};
 
 enum class KeyboardKeyTypes : uint16_t {
 	Key_Unknown = GLFW_KEY_UNKNOWN,
@@ -83,12 +90,15 @@ enum class KeyboardKeyTypes : uint16_t {
 };
 
 class KeyboardKey {
-	KeyboardKeyTypes type;
+	KeyboardKeyTypes   type;
+	KeyboardEventTypes evt_type;
 public:
 	void SetKeyType(KeyboardKeyTypes type);
 };
 
-class INPUT_API KeyboardEvent : public Event {
-	std::vector<KeyboardKey> keys;
+class INPUT_API KeyboardEvents {
+	std::map<KeyboardKey, GeneralEvent> event_bindings;
+public:
+	void SetUp();
 };
 
